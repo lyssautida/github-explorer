@@ -5,13 +5,13 @@ export function ReposList() {
   return (
    <Container>
     <div>
-    <button type='button'>
+     <button type='button'>
       <FiArrowLeft />
-      Voltar
+       Voltar
     
-    </button>
-    <h1>Repositório de Lyssa</h1>
-      </div>
+     </button>
+     <h1>Repositório de Lyssa</h1>
+    </div>
 
       <ul>
         <li>
