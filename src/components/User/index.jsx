@@ -19,7 +19,7 @@ export function User({user, userRepos}) {
     <p>{user.bio}</p>
       <section>
         <div> 
-        <strong>{userRepos?.lenght}</strong>
+        <strong>{userRepos?.length}</strong>
         <span>Repositórios</span>
         </div>
 

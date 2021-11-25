@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { GlobalStyle } from './styles/global'
 import { Container } from './styles/Home'
+
 import { SearchBar } from './components/SearchBar'
 import { User } from './components/User'
+import { ReposList } from './components/ReposList'
 
 // Função 'pai' App
 function App() {
@@ -11,11 +13,15 @@ function App() {
   const [userRepos, setUserRepos] = useState()
    
   return ( // <> fragment, elemento vazio, só pra envolver react sem interferir em nada.
-    <Container> 
+    <Container>
+       {/* função filho,  recebe info, renderiza só se existe algo */}
       <SearchBar setUser={setUser} setUserRepos={setUserRepos} />
-      {/* função filho,  recebe info, renderiza só se existe algo */}
-      {user && <User user={user} userRepos={userRepos}/> }
+     
+      {user && <User user={user} userRepos={userRepos} />}
+      <ReposList />
+      
       <GlobalStyle />
+
     </Container>
   )
 }
