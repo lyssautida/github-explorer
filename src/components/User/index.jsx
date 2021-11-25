@@ -6,7 +6,7 @@ import { Container } from './styles'
 //   name: String
 // }
 
-export function User({user}) {
+export function User({user, userRepos}) {
   // desestruturar a função para não precisar chamar lá embaixo, colocar o objeto dentro do objeto pode seria ser escrito  const { user } = props
   //console.log(props.user)
   console.log(user)
@@ -19,7 +19,7 @@ export function User({user}) {
     <p>{user.bio}</p>
       <section>
         <div> 
-        <strong>12</strong>
+        <strong>{userRepos?.lenght}</strong>
         <span>Repositórios</span>
         </div>
 

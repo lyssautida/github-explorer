@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { Container } from './styles'
 
-export function SearchBar({setUser}) {
+export function SearchBar({setUser, setUserRepos}) {
   const [searchedValue, setSearchedValue] = useState('')
 
   function getUserData(event) {
@@ -12,6 +12,10 @@ export function SearchBar({setUser}) {
       fetch(`https://api.github.com/users/${searchedValue}`)
         .then(response => response.json())
         .then(data => setUser(data))
+      
+        fetch(`https://api.github.com/users/${searchedValue}/repos`)
+        .then(response => response.json())
+        .then(data => setUserRepos(data))
     } catch (error) {
       console.log(error)
     }

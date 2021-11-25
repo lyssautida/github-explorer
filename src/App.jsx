@@ -8,12 +8,13 @@ import { User } from './components/User'
 function App() {
   const [user, setUser] = useState()
   // é um estado para colocar valor e renderizar em outro lugar
+  const [userRepos, setUserRepos] = useState()
    
   return ( // <> fragment, elemento vazio, só pra envolver react sem interferir em nada.
     <Container> 
-      <SearchBar setUser={setUser} />
+      <SearchBar setUser={setUser} setUserRepos={setUserRepos} />
       {/* função filho,  recebe info, renderiza só se existe algo */}
-     {user && <User user={user} /> }
+      {user && <User user={user} userRepos={userRepos}/> }
       <GlobalStyle />
     </Container>
   )
