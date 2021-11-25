@@ -1,11 +1,13 @@
 import { GlobalStyle } from './styles/global'
-import { SearchBar } from './components/SearchBar'
 import { Container } from './styles/Home'
+import { SearchBar } from './components/SearchBar'
+import { User } from './components/User'
 
 function App() {
   return ( // <> fragment, elemento vazio, só pra envolver react sem interferir em nada.
     <Container> 
-            <SearchBar />
+      <SearchBar />
+      <User />
       <GlobalStyle />
     </Container>
   )
