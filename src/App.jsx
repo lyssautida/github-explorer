@@ -11,15 +11,31 @@ function App() {
   const [user, setUser] = useState()
   // é um estado para colocar valor e renderizar em outro lugar
   const [userRepos, setUserRepos] = useState()
+  const [isReposListActive, setIsReposListActive] = useState(false)
    
   return ( // <> fragment, elemento vazio, só pra envolver react sem interferir em nada.
     <Container>
        {/* função filho,  recebe info, renderiza só se existe algo */}
       <SearchBar setUser={setUser} setUserRepos={setUserRepos} />
+
+      {isReposListActive ? (
+        userRepos &&
+        <ReposList
+          user={user}
+          userRepos={userRepos}
+          setIsReposListActive={setIsReposListActive}
+        />
+      )
+        : user && (
+          <User
+          user={user}
+          userRepos={userRepos}
+            setIsReposListActive={setIsReposListActive}
+          />
+      ) }
      
-      {user && <User user={user} userRepos={userRepos} />}
-      <ReposList />
-      
+  
+        
       <GlobalStyle />
 
     </Container>

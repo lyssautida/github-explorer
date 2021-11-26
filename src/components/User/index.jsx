@@ -6,7 +6,7 @@ import { Container } from './styles'
 //   name: String
 // }
 
-export function User({user, userRepos}) {
+export function User({user, userRepos, setIsReposListActive }) {
   // desestruturar a função para não precisar chamar lá embaixo, colocar o objeto dentro do objeto pode seria ser escrito  const { user } = props
   //console.log(props.user)
   console.log(user)
@@ -18,10 +18,10 @@ export function User({user, userRepos}) {
     <h2>{user.login}</h2>
     <p>{user.bio}</p>
       <section>
-        <div> 
+        <button type='button' onClick={() => setIsReposListActive(true)}> 
         <strong>{userRepos?.length}</strong>
         <span>Repositórios</span>
-        </div>
+        </button>
 
         <div>
           <strong>{user.followers}</strong>
