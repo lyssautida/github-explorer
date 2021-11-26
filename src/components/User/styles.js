@@ -15,7 +15,7 @@ export const Container = styled.main`
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
-    border: 4px solid var (--blue);
+    border: 4px solid var(--blue);
     margin-bottom: 0.5rem;
   }
 
