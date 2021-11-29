@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { GlobalStyle } from './styles/global'
 import { Container } from './styles/Home'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { SearchBar } from './components/SearchBar'
 import { User } from './components/User'
 import { ReposList } from './components/ReposList'
+
 
 // Função 'pai' App
 function App() {
@@ -34,7 +36,6 @@ function App() {
           />
       ) }
      
-  
         
       <GlobalStyle />
 
